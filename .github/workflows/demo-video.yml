@@ -1,0 +1,34 @@
+# Nimmt ein Bildschirmvideo der App im iPhone-Simulator auf (Rundgang fuer die App-Pruefung).
+# Ergebnis: Actions -> Lauf -> Artifacts "demo-video".
+name: Demo-Video aufnehmen
+on:
+  workflow_dispatch:
+    inputs:
+      app: { description: 'Demo-Name (demo-<name>.js)', required: true }
+      secs: { description: 'Laenge in Sekunden', required: true, default: '90' }
+jobs:
+  video:
+    runs-on: macos-15
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Web-Teil ins iOS-Projekt kopieren
+        run: |
+          npm install --omit=dev --no-audit --no-fund
+          npx cap sync ios
+      - name: Video aufnehmen
+        run: sh ios/demo/demo-video.sh
+        env:
+          DEMO_APP: ${{ inputs.app }}
+          DEMO_SECS: ${{ inputs.secs }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: demo-video
+          path: ios/App/demo-out/*

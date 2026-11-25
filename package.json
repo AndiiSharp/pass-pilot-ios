@@ -1,0 +1,11 @@
+{
+  "name": "pass-pilot-ios",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@capacitor/core": "8.6.0",
+    "@capacitor/cli": "8.6.0",
+    "@capacitor/ios": "8.6.0",
+    "@capacitor/haptics": "8.0.2"
+  }
+}

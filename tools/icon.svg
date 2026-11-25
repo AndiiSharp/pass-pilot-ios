@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D6BFF"/><stop offset=".55" stop-color="#2141C9"/><stop offset="1" stop-color="#0E1A45"/></linearGradient>
+    <linearGradient id="book" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B2D63"/><stop offset="1" stop-color="#0D1838"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE07A"/><stop offset="1" stop-color="#F5A800"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="28" stdDeviation="30" flood-color="#000" flood-opacity=".35"/></filter>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <circle cx="820" cy="170" r="300" fill="#fff" opacity=".06"/>
+  <g filter="url(#sh)" transform="rotate(-8 512 540)">
+    <rect x="262" y="190" width="500" height="660" rx="56" fill="url(#book)"/>
+    <rect x="262" y="190" width="70" height="660" rx="30" fill="#0A1230" opacity=".6"/>
+    <rect x="640" y="190" width="40" height="660" fill="#1d1d1f"/>
+    <rect x="680" y="190" width="40" height="660" fill="#DD0000"/>
+    <rect x="720" y="190" width="42" height="660" rx="0" fill="#FFCC00"/>
+    <path d="M720 190h-14q56 0 56 56v-0z" fill="#FFCC00"/>
+    <circle cx="470" cy="470" r="150" fill="none" stroke="url(#gold)" stroke-width="34"/>
+    <path d="M396 476l52 52l102-112" fill="none" stroke="#fff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="360" y="690" width="220" height="26" rx="13" fill="#fff" opacity=".28"/>
+    <rect x="360" y="740" width="150" height="26" rx="13" fill="#fff" opacity=".18"/>
+  </g>
+</svg>
